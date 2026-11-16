@@ -68,11 +68,9 @@ with tab2:
         else:
             st.info("No players added yet.")
 
-    except Exception:
-        st.error(
-            "Unable to load players. "
-            "Check your database connection."
-        )
+    except Exception as e:
+        st.error("Unable to load players.")
+        st.exception(e)
 
 with tab3:
     st.header("Player Statistics")
