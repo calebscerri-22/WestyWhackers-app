@@ -4,7 +4,7 @@ import pandas as pd
 from supabase import create_client
 
 st.set_page_config(
-    page_title="Westy Wackers",
+    page_title="Westie Wackers",
     page_icon="⛳",
     layout="wide"
 )
@@ -29,7 +29,7 @@ def get_players():
     return response.data
 
 # Dashboard
-st.title("⛳ Westy Wackers")
+st.title("⛳ Westie Wackers")
 st.subheader("Golf Competition Dashboard")
 
 tab1, tab2, tab3, tab4 = st.tabs([
