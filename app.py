@@ -13,9 +13,10 @@ st.set_page_config(
 @st.cache_resource
 def get_database():
     return create_client(
-        st.secrets["https://cbogbaesgliznxrbgyeu.supabase.co"],
-        st.secrets["sb_publishable_6HLlz3GQJ-SeGnpy5cHYoA_AikDs1kT"]
+        st.secrets["SUPABASE_URL"],
+        st.secrets["SUPABASE_KEY"]
     )
+
 
 # Retrieve players
 def get_players():
