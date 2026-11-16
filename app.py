@@ -77,8 +77,39 @@ with tab3:
     st.header("Player Statistics")
     st.info("Statistics coming soon.")
 
+
 with tab4:
     st.header("Administration")
-    st.warning(
-        "Administrator login is not configured yet."
-    )
+
+    if not st.user.is_logged_in:
+        st.info(
+            "Sign in with Google to access "
+            "the administration area."
+        )
+
+        if st.button(
+            "Sign in with Google",
+            type="primary"
+        ):
+            st.login()
+
+    else:
+        st.success("Google sign-in successful!")
+
+        st.write(
+            f"Welcome, {st.user.get('name', 'Administrator')}"
+        )
+
+        st.write(
+            "Signed in as:",
+            st.user.get("email", "Unknown")
+        )
+
+        st.info(
+            "Identity verified. Administrator "
+            "permissions are not enabled yet."
+        )
+
+        if st.button("Sign out"):
+            st.logout()
+
